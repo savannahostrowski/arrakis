@@ -32,7 +32,7 @@ echo "SSD is working" > /mnt/ssd/test.txt
 cat /mnt/ssd/test.txt
 
 # Get the UUID
-sudo blkid /dev/<NVMe>
+sudo blkid /dev/nvme0n1
 
 # Add to fstab (replace UUID with the actual UUID from above command)
 echo "UUID=<UUID> /mnt/ssd ext4 defaults 0 2" | sudo tee -a /etc/fstab
