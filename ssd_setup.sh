@@ -5,7 +5,7 @@ lsblk
 sudo fdisk -l
 
 # Create a partition on the NVMe drive
-sudo fdisk /dev/<NVMe>
+sudo fdisk /dev/nvme0n1
 
 # In fdisk, follow these steps:
 # - Press 'n' for new partition
@@ -16,13 +16,13 @@ sudo fdisk /dev/<NVMe>
 
 
 # Format the new partition with ext4
-sudo mkfs.ext4 /dev/<NVMe>
+sudo mkfs.ext4 /dev/nvme0n1
 
 # Create mount point
 sudo mkdir /mnt/ssd
 
 # Mount the SSD
-sudo mount /dev/<NVMe> /mnt/ssd
+sudo mount /dev/nvme0n1 /mnt/ssd
 
 # Make it owned by your user
 sudo chown -R $USER:$USER /mnt/ssd
